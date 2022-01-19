@@ -1,0 +1,14 @@
+<div class="row my-2" (click)="recipieDetail($event)">
+    <div class="col-xs-12">
+        <a href="#" class="list-group-item clearfix">
+            <div style="display:flex;justify-content: space-between;">
+                <div>
+                    <h4 class="list-group-item-heading">{{recipie.name}}</h4>
+                    <p class="list-group-item-text">{{recipie.description}}</p>
+                </div>
+                <img src="{{recipie.imageUrl}}" class="img-responsive" style="max-height:50px;;"
+                    alt="Sorry couldn't load the image">
+            </div>
+        </a>
+    </div>
+</div>

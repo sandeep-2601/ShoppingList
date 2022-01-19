@@ -1,0 +1,9 @@
+<app-header (loadPage)="clickedLink($event)"></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipie-book *ngIf="clickedText=='Recipie List'"></app-recipie-book>
+      <app-shopping-list *ngIf="clickedText!='Recipie List'"></app-shopping-list>
+    </div>
+  </div>
+</div>

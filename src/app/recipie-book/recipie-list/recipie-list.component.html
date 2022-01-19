@@ -1,0 +1,7 @@
+<div class="row mt-2">
+    <div class="col-xs-12">
+        <button class="btn btn-success">Add Recipie</button>
+    </div>
+</div>
+<hr>
+<app-recipie-item *ngFor="let recipie of recipies" (detail)="onDetailView(recipie)" [recipie]="recipie" ></app-recipie-item>

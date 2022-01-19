@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img src="" alt="" class="img-responsive">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="text-primary">{{recipieDetail.name}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle">Manage Recipe <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-item"><a href="#">Link1</a></li>
+                <li class="dropdown-item"><a href="#">Link2</a></li>
+                <li class="dropdown-item"><a href="#">Link3</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <img [src]="recipieDetail.imageUrl" class="img-responsive mt-2" style="max-height:400px" alt="">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h2 class="text-primary">Description</h2>
+        {{recipieDetail.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        Ingredients
+    </div>
+</div>
