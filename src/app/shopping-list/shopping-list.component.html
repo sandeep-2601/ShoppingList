@@ -3,9 +3,19 @@
         <app-shopping-edit (ingredientAdded)="addIngredient($event)"></app-shopping-edit>
         <hr>
         <ul class="list-group">
-            <a class="list-group-item" appBetterDirective *ngFor="let ingredient of ingredients">
+            <a class="list-group-item" appBetterDirective [defaultColor]="'yellow'"  [highlightColor]="'red'" *ngFor="let ingredient of ingredients">
                 {{ingredient.name}} - ({{ingredient.quantity}})
             </a>
         </ul>
     </div>
+</div>
+
+<div class="row">
+    <div [ngSwitch]="value" class="col-xs-12">
+        <p *ngSwitchCase="5">I am value 5</p>
+        <p *ngSwitchCase="6">I am value 6</p>
+        <p *ngSwitchCase="7">I am value 7</p>
+        <p *ngSwitchCase="8">I am value 8</p>
+        <p *ngSwitchDefault>I am value 9</p>
+    </div> 
 </div>

@@ -10,6 +10,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { FormsModule } from '@angular/forms';
 import { AppBetterDirective } from './directives/better-directive.directive';
+import { AppCustomDirective } from './directives/structural-directive.directive';
+import { DropDownDirective } from './shared/dropdow.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AppBetterDirective } from './directives/better-directive.directive';
     RecipieItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    AppBetterDirective
+    AppBetterDirective,
+    AppCustomDirective,
+    DropDownDirective
   ],
   imports: [
     BrowserModule,
