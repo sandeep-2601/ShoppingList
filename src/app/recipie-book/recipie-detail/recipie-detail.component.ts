@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Recipie } from '../recipe.model';
+import { RecipieBookService } from '../recipie-book.service';
 
 @Component({
   selector: 'app-recipie-detail',
@@ -7,10 +8,8 @@ import { Recipie } from '../recipe.model';
   styleUrls: ['./recipie-detail.component.css']
 })
 export class RecipieDetailComponent implements OnInit {
-  @Input("recipie") recipieDetail: Recipie;
-  
-  constructor() { }
-  
+  @Input() recipieDetail: Recipie;
+  constructor(private recipieBookService: RecipieBookService) { } 
   ngOnInit(): void {
   }
 

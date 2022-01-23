@@ -1,28 +1,26 @@
 <div class="row">
     <div class="col-xs-12">
-        <img src="" alt="" class="img-responsive">
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
         <h1 class="text-primary">{{recipieDetail.name}}</h1>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <div class="btn-group">
-            <button class="btn btn-primary dropdown-toggle">Manage Recipe <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li ><a href="#">Link1</a></li>
-                <li><a href="#">Link2</a></li>
-                <li><a href="#">Link3</a></li>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <img [src]="recipieDetail.imageUrl" class="img-responsive mt-2" style="max-height:400px" alt="">
+        <img src="{{recipieDetail.imageUrl}}" class="img-responsive mt-2" style="max-height:400px" alt="">
     </div>
 </div>
 <div class="row">
@@ -34,5 +32,10 @@
 <div class="row">
     <div class="col-xs-12">
         Ingredients
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingredient of recipieDetail.ingredients">
+                {{ingredient.name}} - {{ingredient.quantity}}
+            </li>
+        </ul>
     </div>
 </div>

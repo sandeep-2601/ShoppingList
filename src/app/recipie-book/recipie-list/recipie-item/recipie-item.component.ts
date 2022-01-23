@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, Output,EventEmitter} from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipie } from '../../recipe.model';
+import { RecipieBookService } from '../../recipie-book.service';
 
 @Component({
   selector: 'app-recipie-item',
@@ -7,13 +8,11 @@ import { Recipie } from '../../recipe.model';
   styleUrls: ['./recipie-item.component.css']
 })
 export class RecipieItemComponent implements OnInit {
-  @Output("detail") recipieDetailEvent = new EventEmitter<void>();
   @Input() recipie: Recipie;
-  constructor() { }
-
+  constructor(private recipieBookService: RecipieBookService) { }
   ngOnInit(): void {
   }
-  recipieDetail(event): void {
-    this.recipieDetailEvent.emit();
+  recipieDetail(): void {
+    this.recipieBookService.recipieDetailEvent.emit(this.recipie);
   }
 }
