@@ -10,10 +10,10 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Manage Recipie
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" style="cursor: pointer;" (click)="addIngredients()">To Shopping List</a></li>
-                <li><a class="dropdown-item" >Delete Recipie</a></li>
-                <li><a class="dropdown-item" >Edit Recipie</a></li>
+            <ul class="dropdown-menu"  style="cursor: pointer;" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" (click)="addIngredients()">To Shopping List</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/recipie',recipieDetail.id,'edit']">Edit Recipie</a></li>
+                <li><a class="dropdown-item"  >Delete Recipie</a></li>
             </ul>
         </div>
     </div>

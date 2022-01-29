@@ -12,6 +12,5 @@ export class RecipieListComponent implements OnInit {
   constructor(private recipieBookService: RecipieBookService) { }
   ngOnInit(): void {
     this.recipies = this.recipieBookService.recipies;
-    console.log(this.recipies);
   }
 }

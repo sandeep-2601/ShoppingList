@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
 import { AppBetterDirective } from './directives/better-directive.directive';
 import { AppCustomDirective } from './directives/structural-directive.directive';
 import { DropDownDirective } from './shared/dropdow.directive';
+import { AppRouter } from './router.module';
+import { RecipieStartComponent } from './recipie-book/recipie-start/recipie-start.component';
+import { RecipieEditComponent } from './recipie-book/recipie-edit/recipie-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,14 @@ import { DropDownDirective } from './shared/dropdow.directive';
     ShoppingEditComponent,
     AppBetterDirective,
     AppCustomDirective,
-    DropDownDirective
+    DropDownDirective,
+    RecipieStartComponent,
+    RecipieEditComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRouter
   ],
   providers: [],
   bootstrap: [AppComponent]
