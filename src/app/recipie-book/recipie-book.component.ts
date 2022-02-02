@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Recipie } from './recipe.model';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 import { RecipieBookService } from './recipie-book.service';
 
 @Component({
@@ -8,14 +8,16 @@ import { RecipieBookService } from './recipie-book.service';
   styleUrls: ['./recipie-book.component.css'],
   providers: [RecipieBookService]
 })
-export class RecipieBookComponent implements OnInit {
-  recipieDetail: Recipie;
-  constructor(private recipieBookService: RecipieBookService) { }
+export class RecipieBookComponent implements OnInit, OnDestroy {
+  subs: Subscription;
+  constructor() { }
   ngOnInit(): void {
-    this.recipieBookService.recipieDetailEvent.subscribe(
-      (recipieDetail: Recipie) => {
-        this.recipieDetail = recipieDetail
-      });
+    this.subs = interval(1000).subscribe((counter) => {
+      console.log(counter);
+    })
+  }
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 
 }

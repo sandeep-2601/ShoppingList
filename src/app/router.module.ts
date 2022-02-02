@@ -14,7 +14,6 @@ const appRoutes: Routes = [
     {path:":id",component: RecipieDetailComponent}, 
     {path:":id/edit",component:RecipieEditComponent},
     ]},
-   
     {path:"shopping",component:ShoppingListComponent}
     
 ]
