@@ -9,7 +9,7 @@ import { RecipieBookService } from '../../recipie-book.service';
 })
 export class RecipieItemComponent implements OnInit {
   @Input() recipie: Recipie;
-  constructor(private recipieBookService: RecipieBookService) { }
+  constructor() { }
   ngOnInit(): void {
   }
 

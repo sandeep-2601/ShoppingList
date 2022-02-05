@@ -22,8 +22,6 @@ export class RecipieBookService {
         )
     ]
 
-    recipieDetailEvent = new EventEmitter<Recipie>();
-
     constructor(private shoppingListService: ShoppingListService) { }
 
     addIngredients(ingredients: Ingredient[]): void {

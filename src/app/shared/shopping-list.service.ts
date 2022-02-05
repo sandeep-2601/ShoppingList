@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { Ingredient } from "./ingredient.model";
+
 @Injectable({ providedIn: 'root' })
 export class ShoppingListService {
     ingredients: Ingredient[] = [
@@ -15,7 +16,7 @@ export class ShoppingListService {
     getIngredient(id: number): Ingredient {
         return this.ingredients[id];
     }
-    updateIngredient(index:number,quantity:number) {
+    updateIngredient(index: number, quantity: number) {
         this.ingredients[index].quantity = quantity
     }
     addIngredient(ingredient: Ingredient): void {

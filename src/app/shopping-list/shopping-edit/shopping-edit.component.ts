@@ -15,46 +15,56 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editedIndex: number;
   editedItem: Ingredient;
   @ViewChild('f', { static: true }) form: NgForm;
+
   constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit(): void {
-    this.subscription = this.shoppingListService.startedEditing.subscribe((index: number) => {
-      this.editMode = true;
-      this.editedIndex = index;
-      this.editedItem = this.shoppingListService.getIngredient(index);
-      this.form.value.name = this.editedItem.name;
-      this.form.setValue({
-        'name': this.editedItem.name,
-        'quantity': this.editedItem.quantity
-      })
-    });
+    this.subscription = this.shoppingListService.
+      startedEditing.subscribe((index: number) => {
+        this.editMode = true;
+        this.editedIndex = index;
+        this.editedItem = this.shoppingListService.getIngredient(index);
+        this.form.setValue({
+          'name': this.editedItem.name,
+          'quantity': this.editedItem.quantity
+        });
+      });
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
   addItem(form: NgForm): void {
 
     const name = form.value.name;
     const quantity = form.value.quantity;
-    
-      const newIngredient = new Ingredient(name, quantity);
-    if(!this.editMode) {
+
+    const newIngredient = new Ingredient(name, quantity);
+    if (!this.editMode) {
       this.shoppingListService.addIngredient(newIngredient)
     }
     else {
-      this.updateItem(this.editedIndex,newIngredient);
+      this.updateItem(this.editedIndex, newIngredient);
+    }
+    this.editMode = false;
+    this.form.resetForm();
+  }
+  
+  deleteItem(): void {
+    if (this.editMode) {
+      this.shoppingListService.ingredients.splice(this.editedIndex, 1);
+      this.resetItem();
     }
   }
-  deleteItem(): void {
-
-  }
-  updateItem(index: number,ingredient: Ingredient) {
+  
+  updateItem(index: number, ingredient: Ingredient) {
     this.shoppingListService.ingredients[index] = ingredient;
   }
+
   resetItem(): void {
     this.editMode = false;
     this.form.resetForm();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 

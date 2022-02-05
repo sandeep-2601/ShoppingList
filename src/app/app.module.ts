@@ -8,7 +8,7 @@ import { RecipieDetailComponent } from './recipie-book/recipie-detail/recipie-de
 import { RecipieItemComponent } from './recipie-book/recipie-list/recipie-item/recipie-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppBetterDirective } from './directives/better-directive.directive';
 import { AppCustomDirective } from './directives/structural-directive.directive';
 import { DropDownDirective } from './shared/dropdow.directive';
@@ -35,6 +35,7 @@ import { RecipieEditComponent } from './recipie-book/recipie-edit/recipie-edit.c
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRouter
   ],
   providers: [],

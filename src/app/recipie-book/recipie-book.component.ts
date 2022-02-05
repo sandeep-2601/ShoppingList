@@ -8,16 +8,11 @@ import { RecipieBookService } from './recipie-book.service';
   styleUrls: ['./recipie-book.component.css'],
   providers: [RecipieBookService]
 })
-export class RecipieBookComponent implements OnInit, OnDestroy {
-  subs: Subscription;
+export class RecipieBookComponent implements OnInit {
+  
   constructor() { }
   ngOnInit(): void {
-    this.subs = interval(1000).subscribe((counter) => {
-      console.log(counter);
-    })
+   
   }
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
-  }
-
+ 
 }

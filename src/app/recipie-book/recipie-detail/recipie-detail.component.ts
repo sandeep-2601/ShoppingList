@@ -10,17 +10,24 @@ import { RecipieBookService } from '../recipie-book.service';
 })
 export class RecipieDetailComponent implements OnInit {
   recipieDetail: Recipie;
-  constructor(private recipieBookService: RecipieBookService,private route:ActivatedRoute,private router: Router){ }
+
+  constructor(
+    private recipieBookService: RecipieBookService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
+
   ngOnInit(): void {
-    // this.recipieDetail = this.recipieBookService.getRecipieDetail(+this.route.snapshot.params['id']);
     this.route.params.subscribe(
-      (params:Params)  => {
+      (params: Params) => {
         this.recipieDetail = this.recipieBookService.getRecipieDetail(+params['id']);
       }
     )
   }
+
   addIngredients(): void {
     this.recipieBookService.addIngredients(this.recipieDetail.ingredients);
     this.router.navigate(['/shopping'])
   }
+  
 }
